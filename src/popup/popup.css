@@ -1,0 +1,168 @@
+/*
+ * Fallen Tweaks — Popup Styles
+ *
+ * Compact, polished popup for quick module toggling.
+ * Green accent on dark background to match the extension's identity.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 280px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  font-size: 13px;
+  color: #e0e0e0;
+  background: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Header ───────────────────────────────────────────────────── */
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid rgba(74, 158, 74, 0.2);
+}
+
+.popup-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.popup-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #f0f0f0;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Module list ──────────────────────────────────────────────── */
+
+.popup-modules {
+  list-style: none;
+  padding: 6px 0;
+}
+
+.popup-module {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  transition: background 150ms ease;
+}
+
+.popup-module:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.popup-module-name {
+  font-size: 13px;
+  color: #d0d0d0;
+  user-select: none;
+}
+
+/* ─── Toggle switch ────────────────────────────────────────────── */
+
+.popup-toggle {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.popup-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.popup-toggle-track {
+  position: absolute;
+  inset: 0;
+  background: #3a3a3a;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.popup-toggle-track::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: #888;
+  border-radius: 50%;
+  transition:
+    transform 200ms ease,
+    background 200ms ease;
+}
+
+.popup-toggle input:checked + .popup-toggle-track {
+  background: rgba(74, 158, 74, 0.35);
+  box-shadow: inset 0 0 0 1px rgba(74, 158, 74, 0.5);
+}
+
+.popup-toggle input:checked + .popup-toggle-track::after {
+  transform: translateX(16px);
+  background: #4a9e4a;
+}
+
+.popup-toggle input:focus-visible + .popup-toggle-track {
+  outline: 2px solid #4a9e4a;
+  outline-offset: 2px;
+}
+
+/* ─── Footer ───────────────────────────────────────────────────── */
+
+.popup-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 12px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.popup-settings-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #999;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    background 150ms ease;
+}
+
+.popup-settings-btn:hover {
+  color: #e0e0e0;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.popup-settings-icon {
+  opacity: 0.7;
+  transition: opacity 150ms ease;
+}
+
+.popup-settings-btn:hover .popup-settings-icon {
+  opacity: 1;
+}

@@ -1,0 +1,216 @@
+/*
+ * Fallen Tweaks — Options Page Styles
+ *
+ * Full settings page with green accent on dark background.
+ * Designed to feel polished and considered at every level.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  font-size: 14px;
+  color: #e0e0e0;
+  background: #141414;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Layout ───────────────────────────────────────────────────── */
+
+.options {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ─── Header ───────────────────────────────────────────────────── */
+
+.options-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  border-bottom: 1px solid rgba(74, 158, 74, 0.15);
+}
+
+.options-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.options-header-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.options-header-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f5f5f5;
+  letter-spacing: -0.02em;
+}
+
+.options-header-version {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+}
+
+/* ─── Main content ─────────────────────────────────────────────── */
+
+.options-main {
+  flex: 1;
+  padding: 24px 28px;
+}
+
+.options-modules {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ─── Module card ──────────────────────────────────────────────── */
+
+.module-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  background: #1c1c1c;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  transition:
+    border-color 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.module-card:hover {
+  background: #202020;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.module-card--enabled {
+  border-color: rgba(74, 158, 74, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(74, 158, 74, 0.08);
+}
+
+.module-card--enabled:hover {
+  border-color: rgba(74, 158, 74, 0.35);
+}
+
+.module-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.module-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.module-card-description {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.5;
+}
+
+/* ─── Toggle switch (shared between popup & options) ───────────── */
+
+.module-toggle {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.module-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.module-toggle-track {
+  position: absolute;
+  inset: 0;
+  background: #333;
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.module-toggle-track::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: #777;
+  border-radius: 50%;
+  transition:
+    transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    background 200ms ease;
+}
+
+.module-toggle input:checked + .module-toggle-track {
+  background: rgba(74, 158, 74, 0.3);
+  box-shadow: inset 0 0 0 1px rgba(74, 158, 74, 0.45);
+}
+
+.module-toggle input:checked + .module-toggle-track::after {
+  transform: translateX(18px);
+  background: #4a9e4a;
+}
+
+.module-toggle input:focus-visible + .module-toggle-track {
+  outline: 2px solid #4a9e4a;
+  outline-offset: 2px;
+}
+
+/* ─── Footer ───────────────────────────────────────────────────── */
+
+.options-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 12px;
+  color: #555;
+}
+
+.options-footer-separator {
+  color: #3a3a3a;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "fallen-tweaks",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Chrome extension for advanced Fallen London players, providing toggleable UI tweaks to improve gameplay.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "tsc --noEmit",
+    "lint": "eslint src/",
+    "format": "prettier --write 'src/**/*.{ts,tsx,css,html}'",
+    "format:check": "prettier --check 'src/**/*.{ts,tsx,css,html}'"
+  },
+  "packageManager": "pnpm@10.29.2",
+  "devDependencies": {
+    "@crxjs/vite-plugin": "2.0.0-beta.33",
+    "@preact/preset-vite": "^2.10.3",
+    "@types/chrome": "^0.1.36",
+    "@typescript-eslint/eslint-plugin": "^8.55.0",
+    "@typescript-eslint/parser": "^8.55.0",
+    "eslint": "^9.39.2",
+    "preact": "^10.28.3",
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.55.0",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18"
+  }
+}

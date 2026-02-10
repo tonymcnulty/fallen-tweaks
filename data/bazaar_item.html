@@ -1,0 +1,36 @@
+<!-- there are lots of items in the list, the .price:before css rule shows the currency symbol. We want our total value to show on the right-side of the header, but only when the "Sell my things" item is active -->
+
+<h1 class="heading heading--1 exchange__title">The Echo Bazaar!</h1>
+<p class="lede">Welcome to the Bazaar. We are looking forward to meeting your money. Echoes are the currency of the
+    Bazaar. One hundred pennies are one Echo. Get Echoes by selling the treasures you acquire. Mouse over or tap on an
+    item image to see details.</p>
+
+<ol class="nav__list scroll-nav--inverse">
+    <li class="nav__item"><button type="button"
+            class="button--link nav__button menu-item--active button--link-inverse menu-item--inverse">Sell my things</button></li>
+    <li class="nav__item"><button type="button"
+            class="button--link nav__button button--link-inverse menu-item--inverse">Carrow's Steel</button></li>
+    <li class="nav__item"><button type="button"
+            class="button--link nav__button button--link-inverse menu-item--inverse">Maywell's Hattery</button>
+    </li>
+</ol>
+
+...
+
+
+    <li class="shop__item js-item item" data-quality-id="382">
+        <div class="js-icon icon js-tt icon--inventory icon--emphasize">
+            <div aria-label="Bottle of Greyfields 1879; Commonplace The mushroom wines of the Neath are an acquired taste."
+                tabindex="0" role="button" style="outline: 0px; outline-offset: 0px; cursor: default;"><img
+                    alt="Bottle of Greyfields 1879; Commonplace The mushroom wines of the Neath are an acquired taste."
+                    aria-label="Bottle of Greyfields 1879; Commonplace The mushroom wines of the Neath are an acquired taste."
+                    class="cursor-default" src="//images.fallenlondon.com/icons/bottleandglasssmall.png"></div><span
+                class="js-item-value icon__value">3,966</span>
+        </div>
+        <div class="item__desc"><span class="js-item-name item__name">Bottle of Greyfields 1879</span>
+            <div class="price item__price">0.01</div>
+        </div>
+        <div class="js-item-controls item__controls"><button
+                class="button button--primary button--sm js-bazaar-sell flsm-has-listener" type="button">Sell</button>
+        </div>
+    </li>
