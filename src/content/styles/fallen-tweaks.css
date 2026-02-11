@@ -92,7 +92,7 @@
   border-radius: 4px;
   background: transparent;
   color: var(--ft-text-muted);
-  font-size: 15px;
+  font-size: 13px;
   cursor: pointer;
   transition:
     color var(--ft-transition),
@@ -127,6 +127,75 @@
 
 .ft-dimmed:hover {
   opacity: 0.7;
+}
+
+/* ─── Card indicator (persistent badge) ────────────────────────── */
+
+.ft-card-indicator {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 9999;
+  font-size: 16px;
+  line-height: 1;
+  opacity: 0.7;
+  pointer-events: none;
+  transition: opacity var(--ft-transition);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+}
+
+.ft-card-indicator--hidden {
+  opacity: 0;
+}
+
+/* ─── Card favourites overlay (hover action bar) ───────────────── */
+
+.ft-card-overlay {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px 4px;
+  background: rgba(26, 26, 26, 0.92);
+  border: 1px solid var(--ft-green-border);
+  border-radius: var(--ft-radius);
+  box-shadow: var(--ft-shadow);
+  opacity: 0;
+  transform: scale(0.85);
+  transform-origin: top right;
+  transition:
+    opacity var(--ft-transition),
+    transform var(--ft-transition);
+  pointer-events: auto;
+}
+
+.ft-card-overlay.ft-overlay--visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ft-card-overlay__btn {
+  font-size: 14px;
+}
+
+/* ─── Card favourite / avoid states ────────────────────────────── */
+
+.ft-card--favourite {
+  outline: 2px solid var(--ft-green);
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+
+.ft-card--avoid {
+  opacity: 0.4;
+  transition: opacity var(--ft-transition);
+}
+
+.ft-card--avoid:hover {
+  opacity: 0.65;
 }
 
 /* ─── Bazaar Total badge ───────────────────────────────────────── */

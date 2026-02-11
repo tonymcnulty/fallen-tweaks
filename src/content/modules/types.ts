@@ -9,7 +9,7 @@ export interface FeatureModule {
   readonly id: string;
 
   /** Set up observers, listeners, and inject UI elements. */
-  enable(): void;
+  enable(): void | Promise<void>;
 
   /** Remove all injected UI, disconnect observers, unbind listeners. */
   disable(): void;

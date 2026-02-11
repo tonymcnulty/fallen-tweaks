@@ -50,11 +50,11 @@ class ModuleManager {
     });
   }
 
-  private enableModule(module: FeatureModule): void {
+  private async enableModule(module: FeatureModule): Promise<void> {
     if (this.activeModules.has(module.id)) return;
 
     try {
-      module.enable();
+      await module.enable();
       this.activeModules.add(module.id);
       console.log(`[Fallen Tweaks] Enabled: ${module.id}`);
     } catch (err) {
