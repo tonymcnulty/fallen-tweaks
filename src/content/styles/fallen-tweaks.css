@@ -252,6 +252,150 @@
   }
 }
 
+/* ─── Quality favourites — hover star ──────────────────────────── */
+
+.ft-quality-star {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #555;
+  font-size: 15px;
+  cursor: pointer;
+  transition:
+    color var(--ft-transition),
+    opacity var(--ft-transition),
+    transform var(--ft-transition);
+}
+
+.ft-quality-star:hover {
+  color: var(--ft-green-light);
+  transform: scale(1.2);
+}
+
+.ft-quality-star--active {
+  color: var(--ft-green);
+}
+
+.ft-quality-star--active:hover {
+  color: var(--ft-green-light);
+}
+
+/* Hover star — positioned absolute right, fades in */
+.ft-quality-star--hover {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  font-size: 24px;
+  border-radius: 50%;
+}
+
+.ft-quality-star--hover.ft-quality-star--visible {
+  opacity: 1;
+}
+
+.ft-quality-star--hover:hover {
+  transform: translateY(-50%) scale(1.15);
+}
+
+/* Inline star inside favourites group items */
+.ft-quality-star--inline {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  font-size: 24px;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.ft-quality-star--inline:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.15);
+}
+
+
+/* ─── Favourites group ─────────────────────────────────────────── */
+
+.ft-favourites-group {
+  position: relative;
+  border: 1px solid #333;
+  border-radius: var(--ft-radius);
+  padding: 10px;
+  padding-top: 14px;
+  margin-bottom: 14px;
+}
+
+.ft-favourites-group__header-wrap {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 6px;
+}
+
+.ft-favourites-group__header {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: #263b17;
+  border: 1px solid var(--ft-green-border);
+  border-radius: var(--ft-radius);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ft-green-light);
+  line-height: 1;
+}
+
+.ft-favourites-group .quality-item {
+  position: relative;
+}
+
+/* Highlight quality rows on hover when module is active */
+.ft-quality-favourites-active .quality-item {
+  transition: background var(--ft-transition);
+  border-radius: 4px;
+}
+
+.ft-quality-favourites-active .quality-item:hover {
+  background: #b7a885;
+}
+
+/* ─── Quality favourites — drag and drop ──────────────────────── */
+
+.ft-quality-draggable {
+  cursor: grab;
+}
+
+.ft-quality-draggable:active {
+  cursor: grabbing;
+}
+
+.ft-quality-dragging {
+  opacity: 0.4;
+}
+
+.ft-quality-drop-above {
+  box-shadow: 0 -2px 0 0 var(--ft-green);
+}
+
+.ft-quality-drop-below {
+  box-shadow: 0 2px 0 0 var(--ft-green);
+}
+
 /* ─── Attribution label ────────────────────────────────────────── */
 
 .ft-attribution {
