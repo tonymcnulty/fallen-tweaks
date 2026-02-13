@@ -13,6 +13,19 @@ const STAR_CLASS = "ft-quality-star";
 const STAR_HOVER_CLASS = "ft-quality-star--hover";
 const FAV_GROUP_ID = "ft-quality-favourites-group";
 
+/** Quality IDs whose name should be shortened to just "Name Level" (strip description after " - "). */
+const SHORT_NAME_IDS = new Set([
+  "140873",
+  "140969",
+  "144818",
+  "140896",
+  "140826",
+  "140998",
+  "140830",
+  "140897",
+  "142291",
+]);
+
 let favouriteIds: string[] = [];
 let observer: MutationObserver | null = null;
 let debounceTimer: ReturnType<typeof setTimeout> | null = null;
@@ -189,6 +202,17 @@ function buildFavouritesGroup(): void {
     // Remove any hover stars that got cloned
     clone.querySelectorAll(`.${STAR_HOVER_CLASS}`).forEach((el) => el.remove());
     clone.style.position = "";
+
+    // Shorten name for specific qualities (strip description after " - ")
+    if (SHORT_NAME_IDS.has(qualityId)) {
+      const nameSpan = clone.querySelector(".js-item-name > span");
+      if (nameSpan && nameSpan.textContent) {
+        const dashIndex = nameSpan.textContent.indexOf(" - ");
+        if (dashIndex !== -1) {
+          nameSpan.textContent = nameSpan.textContent.slice(0, dashIndex);
+        }
+      }
+    }
 
     // Add an inline star to favourites group items (always visible)
     const starBtn = createStarButton(qualityId, false);

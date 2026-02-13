@@ -364,6 +364,11 @@
   position: relative;
 }
 
+/* Hide longer descriptions of favourites */
+#ft-quality-favourites-group .quality-item__description {
+  display: none;
+}
+
 /* Highlight quality rows on hover when module is active */
 .ft-quality-favourites-active .quality-item {
   transition: background var(--ft-transition);
